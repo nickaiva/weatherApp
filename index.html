@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>What is the current weather like?</h1>
+    </header>
+    <fieldset>
+    <legend>Enter the location to search for (e.g, Boston, Athens, or Kyparissia)</legend>
+    
+        <form >
+            <label for="location">
+                Location</label>
+                 <input type="text" id="location" value="Munich" list="locations" required>
+                <datalist id="locations">
+                    <option value="Athens"/>
+                    <option value="Boston"/>
+                    <option value="London"/>
+                    <option value="Nuremberg"/>
+                    <option value="Nea Ionia"/>
+                  </datalist>
+            
+
+            <br>
+            <label for="units">
+                Select the temperature units <select type="text" id="units">
+                    <option value="" disabled>Please select </option>
+                    <option value="metric" selected>Celcius</option>
+                    <option value="standard">Fahrenheit</option>
+                </select>
+            </label>
+            <br>
+            <input type="reset" value="Clear">
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </fieldset>
+    <main>
+        <div id="forecast">
+            <span id="progress" class="hidden">Loading</span>
+            <span>Max temp</span><span id="temp_max"></span>
+            <span>Min temp</span><span id="temp_min"></span>
+            <p>Weather<span id="description"></span></p>
+           <p>Wind</p> 
+           <span>Speed in m/sec</span>
+           <span id="speed"></span> 
+           <span>Direction in degrees</span>
+           <span id="direction"></span>
+        </div>
+    </main>
+    <script src="weather.js"></script>
+</body>
+
+</html>
