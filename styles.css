@@ -6,3 +6,24 @@
 .hidden{
     display: none;
 }
+
+.shown{
+    display: block;
+}
+
+body{
+    display: flex;
+    flex-direction:column;
+    margin:0;
+    width:auto;
+    background-color:#FFDEAD;
+    text-align:justified;
+}
+
+h1 , h2 {
+    color: brown;
+}
+
+.weather-icon{
+    display: block;
+}
