@@ -11,15 +11,15 @@
 
 <body>
     <header>
-        <h1>What is the current weather like?</h1>
+        <h1>Current weather worldwide</h1>
     </header>
     <fieldset>
     <legend>Enter the location to search for (e.g, Boston, Athens, or Kyparissia)</legend>
     
         <form >
             <label for="location">
-                Location</label>
-                 <input type="text" id="location" value="Munich" list="locations" required>
+                Enter a city</label>
+                 <input type="text" id="location"  placeholder="Athens" list="locations" required><!-- -->
                 <datalist id="locations">
                     <option value="Athens"/>
                     <option value="Boston"/>
@@ -31,10 +31,11 @@
 
             <br>
             <label for="units">
-                Select the temperature units <select type="text" id="units">
-                    <option value="" disabled>Please select </option>
-                    <option value="metric" selected>Celcius</option>
-                    <option value="standard">Fahrenheit</option>
+                Select the temperature units <select type="text" id="units" required>
+                    <option value="" selected  disabled>Please select </option>
+                    <option value="metric"  >Celcius</option>
+                    <option value="imperial">Fahrenheit</option>
+                    <option value="standard">Kelvin</option>
                 </select>
             </label>
             <br>
@@ -42,16 +43,18 @@
             <input type="submit" value="Submit" id="submit">
         </form>
     </fieldset>
+      <h2 id="progress" class="hidden">Network error or no such city found!</h2>
     <main>
-        <div id="forecast">
-            <span id="progress" class="hidden">Loading</span>
-            <span>Max temp</span><span id="temp_max"></span>
-            <span>Min temp</span><span id="temp_min"></span>
-            <p>Weather<span id="description"></span></p>
-           <p>Wind</p> 
-           <span>Speed in m/sec</span>
+        <div id="forecast" class="hidden">
+          <hr>
+            <div class="weather-icon"><img src="icons/unknown.png" /></div>
+            <span>Max temp:</span><span id="temp_max"></span>
+            <span>Min temp:</span><span id="temp_min"></span>
+            <p>Weather description:<span id="description"></span></p>
+           <p>Wind details</p> 
+           <span>Speed in m/sec:</span>
            <span id="speed"></span> 
-           <span>Direction in degrees</span>
+           <span>Direction in degrees:</span>
            <span id="direction"></span>
         </div>
     </main>
